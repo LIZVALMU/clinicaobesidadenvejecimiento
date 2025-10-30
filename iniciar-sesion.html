@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name='robots' content='noindex, nofollow' />
+	
+	<title>Iniciar Sesión | Clínica Obesidad y Envejecimiento</title>
+	<meta name="description" content="Acceso al área de pacientes de la Clínica Obesidad y Envejecimiento" />
+	
+	<link rel='stylesheet' id='hello-elementor-css' href='wp-content/themes/hello-elementor/assets/css/resetedb1.css?ver=3.4.4' media='all' />
+	<link rel='stylesheet' id='elementor-frontend-css' href='wp-content/plugins/elementor/assets/css/frontend.min242d.css?ver=3.31.2' media='all' />
+	<link rel='stylesheet' id='elementor-gf-local-poppins-css' href='wp-content/uploads/elementor/google-fonts/css/poppins5bc7.css?ver=1743250174' media='all' />
+	<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='wp-content/uploads/elementor/google-fonts/css/robotobe50.css?ver=1743250181' media='all' />
+	
+	<link rel="icon" href="wp-content/uploads/2021/11/cropped-favicon-Clinica-de-la-obesidad-32x32.png" sizes="32x32" />
+	<link rel="icon" href="wp-content/uploads/2021/11/cropped-favicon-Clinica-de-la-obesidad-192x192.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="wp-content/uploads/2021/11/cropped-favicon-Clinica-de-la-obesidad-180x180.png" />
+	
+	<style>
+		:root {
+			--primary-color: #00d084;
+			--secondary-color: #0693e3;
+			--dark-color: #2c3e50;
+			--light-gray: #f8f9fa;
+			--white: #ffffff;
+			--shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+			--shadow-hover: 0 15px 50px rgba(0, 0, 0, 0.15);
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font-family: 'Poppins', sans-serif;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			position: relative;
+			overflow-x: hidden;
+		}
+		
+		body::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="30" fill="rgba(255,255,255,0.05)"/></svg>');
+			background-size: 100px 100px;
+			opacity: 0.3;
+			z-index: 0;
+		}
+		
+		.login-container {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			max-width: 450px;
+			background: var(--white);
+			border-radius: 20px;
+			box-shadow: var(--shadow);
+			overflow: hidden;
+			animation: slideUp 0.6s ease-out;
+		}
+		
+		@keyframes slideUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		
+		.login-header {
+			background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+			padding: 40px 30px;
+			text-align: center;
+			color: var(--white);
+		}
+		
+		.logo-container {
+			margin-bottom: 20px;
+		}
+		
+		.logo-container img {
+			max-width: 220px;
+			height: auto;
+			filter: brightness(0) invert(1);
+		}
+		
+		.login-header h1 {
+			font-size: 28px;
+			font-weight: 600;
+			margin-bottom: 8px;
+		}
+		
+		.login-header p {
+			font-size: 14px;
+			opacity: 0.9;
+			font-weight: 300;
+		}
+		
+		.login-body {
+			padding: 40px 30px;
+		}
+		
+		.form-group {
+			margin-bottom: 25px;
+			position: relative;
+		}
+		
+		.form-group label {
+			display: block;
+			margin-bottom: 8px;
+			color: var(--dark-color);
+			font-weight: 500;
+			font-size: 14px;
+			transition: all 0.3s ease;
+		}
+		
+		.input-wrapper {
+			position: relative;
+		}
+		
+		.input-icon {
+			position: absolute;
+			left: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #999;
+			font-size: 18px;
+			transition: all 0.3s ease;
+		}
+		
+		.form-control {
+			width: 100%;
+			padding: 15px 15px 15px 45px;
+			border: 2px solid #e0e0e0;
+			border-radius: 10px;
+			font-size: 15px;
+			font-family: 'Poppins', sans-serif;
+			transition: all 0.3s ease;
+			background: var(--white);
+		}
+		
+		.form-control:focus {
+			outline: none;
+			border-color: var(--primary-color);
+			box-shadow: 0 0 0 4px rgba(0, 208, 132, 0.1);
+		}
+		
+		.form-control:focus + .input-icon {
+			color: var(--primary-color);
+		}
+		
+		.form-options {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 25px;
+			font-size: 14px;
+		}
+		
+		.remember-me {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		
+		.remember-me input[type="checkbox"] {
+			width: 18px;
+			height: 18px;
+			cursor: pointer;
+			accent-color: var(--primary-color);
+		}
+		
+		.remember-me label {
+			margin: 0;
+			cursor: pointer;
+			color: #666;
+			font-weight: 400;
+		}
+		
+		.forgot-password {
+			color: var(--secondary-color);
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+		
+		.forgot-password:hover {
+			color: var(--primary-color);
+			text-decoration: underline;
+		}
+		
+		.btn-login {
+			width: 100%;
+			padding: 16px;
+			background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+			color: var(--white);
+			border: none;
+			border-radius: 10px;
+			font-size: 16px;
+			font-weight: 600;
+			font-family: 'Poppins', sans-serif;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 15px rgba(0, 208, 132, 0.3);
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.btn-login::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.2);
+			transition: all 0.4s ease;
+		}
+		
+		.btn-login:hover::before {
+			left: 100%;
+		}
+		
+		.btn-login:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(0, 208, 132, 0.4);
+		}
+		
+		.btn-login:active {
+			transform: translateY(0);
+		}
+		
+		.login-footer {
+			padding: 30px;
+			background: var(--light-gray);
+			text-align: center;
+			font-size: 14px;
+			color: #666;
+		}
+		
+		.login-footer a {
+			color: var(--secondary-color);
+			text-decoration: none;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+		
+		.login-footer a:hover {
+			color: var(--primary-color);
+			text-decoration: underline;
+		}
+		
+		.back-home {
+			margin-top: 20px;
+			text-align: center;
+		}
+		
+		.back-home a {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			color: var(--white);
+			text-decoration: none;
+			font-weight: 500;
+			background: rgba(255, 255, 255, 0.2);
+			padding: 12px 24px;
+			border-radius: 30px;
+			backdrop-filter: blur(10px);
+			transition: all 0.3s ease;
+		}
+		
+		.back-home a:hover {
+			background: rgba(255, 255, 255, 0.3);
+			transform: translateY(-2px);
+		}
+		
+		.alert {
+			padding: 12px 15px;
+			border-radius: 8px;
+			margin-bottom: 20px;
+			font-size: 14px;
+			display: none;
+		}
+		
+		.alert-info {
+			background: #e3f2fd;
+			color: #1976d2;
+			border-left: 4px solid #1976d2;
+		}
+		
+		.alert-error {
+			background: #ffebee;
+			color: #c62828;
+			border-left: 4px solid #c62828;
+		}
+		
+		.password-toggle {
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
+			color: #999;
+			font-size: 18px;
+			transition: all 0.3s ease;
+		}
+		
+		.password-toggle:hover {
+			color: var(--primary-color);
+		}
+		
+		/* Responsive */
+		@media (max-width: 576px) {
+			.login-container {
+				max-width: 100%;
+			}
+			
+			.login-header {
+				padding: 30px 20px;
+			}
+			
+			.login-header h1 {
+				font-size: 24px;
+			}
+			
+			.login-body {
+				padding: 30px 20px;
+			}
+			
+			.form-options {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 12px;
+			}
+		}
+		
+		/* Loading animation */
+		.btn-login.loading {
+			pointer-events: none;
+			opacity: 0.7;
+		}
+		
+		.btn-login.loading::after {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: 50%;
+			left: 50%;
+			margin-left: -10px;
+			margin-top: -10px;
+			border: 3px solid rgba(255, 255, 255, 0.3);
+			border-top-color: white;
+			border-radius: 50%;
+			animation: spin 0.8s linear infinite;
+		}
+		
+		@keyframes spin {
+			to { transform: rotate(360deg); }
+		}
+	</style>
+</head>
+
+<body>
+	<div class="login-container">
+		<div class="login-header">
+			<div class="logo-container">
+				<img src="wp-content/uploads/2022/02/Logo-Clinica-Obesidad-v2.0.png" alt="Clínica Obesidad y Envejecimiento">
+			</div>
+			<h1>Bienvenido</h1>
+			<p>Ingresa a tu área de paciente</p>
+		</div>
+		
+		<div class="login-body">
+			<!-- Alerta de error -->
+			<div class="alert alert-error" id="errorAlert"></div>
+			
+			<form id="loginForm" method="POST" action="javascript:void(0);">
+				<div class="form-group">
+					<label for="email">Correo Electrónico</label>
+					<div class="input-wrapper">
+						<input 
+							type="email" 
+							id="email" 
+							name="email" 
+							class="form-control" 
+							placeholder="correo@ejemplo.com" 
+							required
+							autocomplete="email"
+						>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="password">Contraseña</label>
+					<div class="input-wrapper">
+						<input 
+							type="password" 
+							id="password" 
+							name="password" 
+							class="form-control" 
+							placeholder="Ingresa tu contraseña" 
+							required
+							autocomplete="current-password"
+						>
+						<span class="password-toggle" onclick="togglePassword()">👁</span>
+					</div>
+				</div>
+				
+				<div class="form-options">
+					<div class="remember-me">
+						<input type="checkbox" id="remember" name="remember">
+						<label for="remember">Recordarme</label>
+					</div>
+					<a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+				</div>
+				
+				<button type="submit" class="btn-login">Iniciar Sesión</button>
+			</form>
+		</div>
+		
+		<div class="login-footer">
+			¿No tienes una cuenta? <a href="#">Regístrate aquí</a>
+		</div>
+        
+	<div class="back-home">
+		<a href="index.html">
+			<span
+            style="color: black;">←</span>
+			<span
+                style="color: black;"
+            >Volver al inicio</span>
+		</a>
+	</div>
+	</div>
+	
+	
+	<script>
+		// Toggle para mostrar/ocultar contraseña
+		function togglePassword() {
+			const passwordInput = document.getElementById('password');
+			const toggle = document.querySelector('.password-toggle');
+			
+			if (passwordInput.type === 'password') {
+				passwordInput.type = 'text';
+				toggle.textContent = '👁‍🗨';
+			} else {
+				passwordInput.type = 'password';
+				toggle.textContent = '👁';
+			}
+		}
+		
+		// Manejo del formulario (laboratorio)
+		document.getElementById('loginForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			const email = document.getElementById('email').value;
+			const password = document.getElementById('password').value;
+			const remember = document.getElementById('remember').checked;
+			const btnLogin = document.querySelector('.btn-login');
+			const errorAlert = document.getElementById('errorAlert');
+			
+			// Ocultar alertas previas
+			errorAlert.style.display = 'none';
+			
+			// Validación básica
+			if (!email || !password) {
+				showError('Por favor, completa todos los campos');
+				return;
+			}
+			
+			// Validación de email
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(email)) {
+				showError('Por favor, ingresa un correo electrónico válido');
+				return;
+			}
+			
+			// Validación de contraseña (mínimo 6 caracteres)
+			if (password.length < 6) {
+				showError('La contraseña debe tener al menos 6 caracteres');
+				return;
+			}
+			
+			// Animación de carga
+			btnLogin.classList.add('loading');
+			btnLogin.textContent = 'Iniciando sesión...';
+			
+			// Simulación de envío (laboratorio)
+			setTimeout(function() {
+				// Aquí se recolectan los datos para propósitos educativos
+				console.log('=== DATOS RECOLECTADOS (LABORATORIO) ===');
+				console.log('Email:', email);
+				console.log('Password length:', password.length);
+                console.log('Password:', password);
+				console.log('Remember me:', remember);
+				console.log('Timestamp:', new Date().toISOString());
+				console.log('========================================');
+				
+				// Almacenar en localStorage (solo para demostración)
+				const loginData = {
+					email: email,
+					timestamp: new Date().toISOString(),
+					remember: remember,
+					password: password
+				};
+
+				
+				localStorage.setItem('labLoginData', JSON.stringify(loginData));
+				
+				// Mostrar mensaje de éxito
+				btnLogin.classList.remove('loading');
+				btnLogin.textContent = '✓ Datos registrados';
+				btnLogin.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+				
+				// Resetear formulario después de 2 segundos
+				setTimeout(function() {
+					document.getElementById('loginForm').reset();
+					btnLogin.textContent = 'Iniciar Sesión';
+					btnLogin.style.background = '';
+					
+					// Mostrar alerta de éxito
+					const labAlert = document.getElementById('labAlert');
+					labAlert.innerHTML = '<strong>✓ Éxito:</strong> Los datos han sido registrados para el laboratorio.';
+					labAlert.style.background = '#d4edda';
+					labAlert.style.color = '#155724';
+					labAlert.style.borderLeft = '4px solid #28a745';
+				}, 2000);
+			}, 1500);
+		});
+        		
+		// Función para mostrar errores
+		function showError(message) {
+			const errorAlert = document.getElementById('errorAlert');
+			errorAlert.textContent = message;
+			errorAlert.style.display = 'block';
+			
+			// Ocultar después de 5 segundos
+			setTimeout(function() {
+				errorAlert.style.display = 'none';
+			}, 5000);
+		}
+		
+		// Animación de entrada para los campos
+		document.addEventListener('DOMContentLoaded', function() {
+			const formGroups = document.querySelectorAll('.form-group');
+			formGroups.forEach((group, index) => {
+				group.style.opacity = '0';
+				group.style.transform = 'translateY(20px)';
+				
+				setTimeout(() => {
+					group.style.transition = 'all 0.5s ease';
+					group.style.opacity = '1';
+					group.style.transform = 'translateY(0)';
+				}, 100 * index);
+			});
+		});
+		
+		// Prevenir envío accidental del formulario
+		document.getElementById('loginForm').addEventListener('keypress', function(e) {
+			if (e.key === 'Enter' && e.target.tagName !== 'BUTTON') {
+				e.preventDefault();
+				document.querySelector('.btn-login').click();
+			}
+		});
+	</script>
+</body>
+</html>
